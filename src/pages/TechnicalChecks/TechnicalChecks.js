@@ -211,17 +211,22 @@ function TechnicalChecks() {
 
         {/* ── Stat Cards ── */}
         <div className="tc-stats-row">
-          {[
-            { label: 'TOTAL CHECKS',   value: total,        cls: 'tc-stat--blue'   },
-            { label: 'VALID',          value: validCount,   cls: 'tc-stat--green'  },
-            { label: 'EXPIRING SOON',  value: soonCount,    cls: 'tc-stat--gold'   },
-            { label: 'EXPIRED',        value: expiredCount, cls: 'tc-stat--red'    },
-          ].map(s => (
-            <div key={s.label} className={`tc-stat-card ${s.cls}`}>
-              <div className="tc-stat-label">{s.label}</div>
-              <div className="tc-stat-value">{s.value}</div>
-            </div>
-          ))}
+          <div className="tc-kpi k1">
+            <div className="tc-kpi-label"><i className="fas fa-clipboard-check" /> TOTAL CHECKS</div>
+            <div className="tc-kpi-val">{total}</div>
+          </div>
+          <div className="tc-kpi k2">
+            <div className="tc-kpi-label"><i className="fas fa-circle-check" /> VALID</div>
+            <div className="tc-kpi-val">{validCount}</div>
+          </div>
+          <div className="tc-kpi k3">
+            <div className="tc-kpi-label"><i className="fas fa-triangle-exclamation" /> EXPIRING SOON</div>
+            <div className="tc-kpi-val">{soonCount}</div>
+          </div>
+          <div className="tc-kpi k4">
+            <div className="tc-kpi-label"><i className="fas fa-circle-xmark" /> EXPIRED</div>
+            <div className="tc-kpi-val">{expiredCount}</div>
+          </div>
         </div>
 
         {/* ── Expiring-Soon Banner ── */}
