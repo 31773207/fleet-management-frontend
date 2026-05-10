@@ -49,7 +49,6 @@ function Vehicles() {
   
   const { confirmState, showConfirm, hideConfirm } = useConfirm();
 
-  // Load data
   useEffect(() => {
     fetchVehicles();
     fetchBrands();
@@ -65,7 +64,6 @@ function Vehicles() {
     setShowForm(true);
   };
 
-  // Actions using showConfirm
   const handleDelete = (id, plateNumber) => {
     showConfirm(
       'Delete Vehicle',
@@ -120,14 +118,13 @@ function Vehicles() {
     );
   };
 
-  // Derived data
   const filtered = filterVehicles(vehicles, search, filter);
   const fuelOptions = getFuelOptions();
   const typeOptions = getTypeOptions(types);
-//style={{ color: '#0f8c20' }}
+
   const columns = [
     { key: 'id', label: 'ID' },
-    { key: 'plateNumber', label: 'plate Number', render: (value) => <strong  >{value}</strong> },
+    { key: 'plateNumber', label: 'Plate Number', render: (value) => <strong>{value}</strong> },
     { key: 'brand', label: 'Brand', render: (value) => value?.brandName || '—' },
     { key: 'model', label: 'Model' },
     { key: 'color', label: 'Color', render: (value) => value || '—' },
@@ -166,13 +163,15 @@ function Vehicles() {
     }
   ];
 
-  const tableData = filtered;
-
   return (
     <PageLayout>
       <div className='content-header'>
         <h2>Vehicles</h2>
-        {canEdit() && <AddButton onClick={() => { resetForm(); setEditVehicle(null); setShowForm(true); }}>+ Add Vehicle</AddButton>}
+        {canEdit() && (
+          <AddButton onClick={() => { resetForm(); setEditVehicle(null); setShowForm(true); }}>
+            + Add Vehicle
+          </AddButton>
+        )}
       </div>
 
       <div className='content-body'>
@@ -189,7 +188,7 @@ function Vehicles() {
       {loading ? <LoadingSpinner /> : (
         <DataTable 
           columns={columns} 
-          data={tableData}
+          data={filtered}
           emptyMessage="No vehicles found"
         />
       )}
@@ -203,21 +202,21 @@ function Vehicles() {
         confirmVariant={confirmState.variant}
       />
 
-      {/* ✅ Vehicle Form Modal */}
       <VehicleFormModal
         isOpen={showForm}
         onClose={() => { setShowForm(false); setEditVehicle(null); }}
         onSave={async (formData) => {
           const brandId = await ensureBrand(formData.brandName);
           const vehicleData = {
-            plateNumber: formData.plateNumber,
-            model: formData.model,
-            color: formData.color,
-            year: parseInt(formData.year),
-            kilometrage: parseFloat(formData.kilometrage) || 0,
-            fuelType: formData.fuelType,
-            brand: brandId ? { id: parseInt(brandId) } : null,
-            vehicleType: formData.vehicleTypeId ? { id: parseInt(formData.vehicleTypeId) } : null
+            plateNumber:          formData.plateNumber,
+            model:                formData.model,
+            color:                formData.color,
+            year:                 parseInt(formData.year),
+            kilometrage:          parseFloat(formData.kilometrage) || 0,
+            fuelType:             formData.fuelType,
+            brand:                brandId ? { id: parseInt(brandId) } : null,
+            vehicleType:          formData.vehicleTypeId ? { id: parseInt(formData.vehicleTypeId) } : null,
+            technicalCheckExpiry: formData.technicalCheckExpiry || null,  // ← NEW
           };
 
           if (editVehicle) {
