@@ -91,7 +91,7 @@
 }
 
 .tc-kpi-label {
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: 1.2px;
   text-transform: uppercase;
@@ -120,21 +120,21 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  background: rgba(220, 53, 69, 0.15);
-  border: 1px solid #dc3545;
+  background: rgba(156, 38, 50, 0.482);
+  border: 1px solid #843c43;
   border-radius: 8px;
   padding: 12px 16px;
   margin-bottom: 16px;
+    backdrop-filter: blur(2px);
   color: white;
-  font-size: 13px;
+  font-size: 18px;
   flex-wrap: wrap;
 }
 
 .tc-expiry-icon {
   color: #dc3545;
-  font-size: 15px;
+  font-size: 20px;
   flex-shrink: 0;
-  margin-top: 1px;
 }
 
 .tc-expiry-banner strong {
@@ -145,7 +145,6 @@
 .tc-expiry-list {
   color: rgba(255, 255, 255, 0.75);
   flex: 1;
-  line-height: 1.6;
 }
 
 .tc-expiry-item {
@@ -155,15 +154,15 @@
 /* ── Vehicle Plate Cell ──────────────────────────── */
 .tc-plate {
   font-weight: 700;
-  font-size: 14px;
-  color: var(--primary);
+  font-size: 18px;
+  color: #7facf9;  /* ← Change from yellow to blue */
   letter-spacing: 0.5px;
 }
 
 /* ── Days Left Cell ─────────────────────────────── */
 .tc-days {
   font-weight: 700;
-  font-size: 13px;
+  font-size: 16px;
   padding: 3px 8px;
   border-radius: 6px;
 }

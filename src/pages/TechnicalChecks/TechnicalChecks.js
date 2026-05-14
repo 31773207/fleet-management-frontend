@@ -6,12 +6,14 @@ import { AddButton, EditButton, DeleteButton } from '../../components/common/But
 import { ConfirmModal } from '../../components/common/ConfirmModal';
 import { LoadingSpinner } from '../../components/common/LoadingSpinner';
 import { DataTable } from '../../components/common/DataTable';
+import { FilterBar } from '../../components/common/FilterBar'; // ← ADD THIS IMPORT
 import { canEdit } from '../../utils/roles';
 import { TechnicalCheckModal } from '../../components/common/TechnicalCheckModal';
 import { useConfirm } from '../../hooks/useConfirm';
 import './TechnicalChecks.css';
 
-const FILTER_TABS = ['All', 'VALID', 'EXPIRED', 'FAILED', 'Expiring Soon'];
+// Remove the FILTER_TABS constant since FilterBar will handle it
+// const FILTER_TABS = ['All', 'VALID', 'EXPIRED', 'FAILED', 'Expiring Soon'];
 
 const daysUntilExpiry = (expiryDate) => {
   if (!expiryDate) return null;
@@ -245,24 +247,15 @@ function TechnicalChecks() {
           </div>
         )}
 
-        {/* ── Filter Tabs + Search ── */}
-        <div className="filters">
-          {FILTER_TABS.map(tab => (
-            <button
-              key={tab}
-              className={`filter-btn ${filter === tab ? 'active-filter' : ''}`}
-              onClick={() => setFilter(tab)}
-            >
-              {tab === 'Expiring Soon' ? 'EXPIRING SOON' : tab.toUpperCase()}
-            </button>
-          ))}
-          <input
-            className="search-input"
-            placeholder="Search by vehicle, center…"
-            value={search}
-            onChange={e => setSearch(e.target.value)}
-          />
-        </div>
+        {/* ── REPLACED with FilterBar component ── */}
+        <FilterBar
+          filters={['All', 'VALID', 'EXPIRED', 'FAILED', 'Expiring Soon']}
+          activeFilter={filter}
+          onFilterChange={setFilter}
+          searchValue={search}
+          onSearchChange={setSearch}
+          searchPlaceholder="Search by vehicle, center or notes..."
+        />
 
         {/* ── Table ── */}
         {loading ? (
