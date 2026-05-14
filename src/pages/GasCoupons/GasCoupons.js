@@ -90,7 +90,7 @@ function GasCoupons() {
       <div className="content-header">
         <h2 className="page-title">Gas Coupons</h2>
         {canEdit() && (
-          <AddButton onClick={() => setShowBuyModal(true)}>Buy Coupons</AddButton>
+          <AddButton onClick={() => setShowBuyModal(true)}>Add Coupons</AddButton>
         )}
       </div>
 
