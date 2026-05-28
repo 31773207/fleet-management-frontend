@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# Fleet Management System - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the frontend of the Fleet Management System developed for the Bank of Algeria.
+It provides a user interface for interacting with the backend REST API and managing fleet operations.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Project Overview
 
-### `npm start`
+The frontend is responsible for the user interface and user experience of the system.
+It communicates with the backend API to display and manage data in real time.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🎨 Main Features
 
-### `npm test`
+* User login and authentication interface
+* Role-based dashboards (Admin, Fleet Manager, User)
+* Vehicle management interface
+* Driver management interface
+* Mission and trip tracking pages
+* Maintenance and fuel management views
+* Real-time data interaction with backend API
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🔗 API Integration
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The frontend consumes REST APIs provided by the backend using HTTP requests (Axios/fetch).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Backend API URL: http://localhost:8080/api
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🧰 Technologies Used
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* React.js (or HTML/CSS/JavaScript if applicable)
+* JavaScript
+* Axios (API communication)
+* HTML5
+* CSS3
+* Tailwind CSS (if used)
+* React Router (if used)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🔐 Authentication
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* JWT token-based authentication
+* Secure login system
+* Role-based access to pages
+* Protected routes
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🔗 Related Repositories
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Backend: https://github.com/31773207/fleet-management-backend.git
+* Report: https://github.com/your-username/report-repo
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## ▶️ How to Run
 
-### Analyzing the Bundle Size
+1. Clone the repository
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash id="runf1"
+git clone https://github.com/your-username/frontend-repo.git```
 
-### Making a Progressive Web App
+2. Install dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash id="runf2"
+npm install
+```
 
-### Advanced Configuration
+3. Start the development server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash id="runf3"
+npm start
+```
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📌 Notes
 
-### `npm run build` fails to minify
+* Ensure backend is running before starting frontend
+* API connection must be configured correctly
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
