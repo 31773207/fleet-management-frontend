@@ -56,7 +56,7 @@ The frontend consumes REST APIs provided by the backend using HTTP requests (Axi
 ## 🔗 Related Repositories
 
 * Backend: https://github.com/31773207/fleet-management-backend.git
-* Report: https://github.com/your-username/report-repo
+* Report: https://github.com/31773207/university-final-project-report.pdf.git
 
 ---
 
