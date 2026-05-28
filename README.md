@@ -65,7 +65,7 @@ The frontend consumes REST APIs provided by the backend using HTTP requests (Axi
 1. Clone the repository
 
 ```bash id="runf1"
-git clone https://github.com/your-username/frontend-repo.git```
+git clone https://github.com/31773207/fleet-management-frontend.git```
 
 2. Install dependencies
 
